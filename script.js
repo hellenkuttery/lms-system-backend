@@ -5,7 +5,7 @@ const browserLanguage = navigator.language
 console.log(navigator)
 console.log("Tarayıcı dil ayarı: " + browserLanguage);
 
-const url=`https://api.openweathermap.org/data/2.5/weather?q=ankara&appid=${apikey}&lang=${browserLanguage}`
+const url=`https://api.openweathermap.org/data/2.5/weather?q=ankara&appid=${apikey}&lang=${browserLanguage.slice(0,2)}`
 
 const getData=async()=>{
     console.log(url)
