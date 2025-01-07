@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
 
+const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[+%&()!]).{8,}$/;
+
+
 const userSchema = new mongoose.Schema({
   firstname: { type: String, required: true },
   lastname: { type: String, required: true },
