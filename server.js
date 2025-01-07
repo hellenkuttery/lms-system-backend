@@ -50,6 +50,15 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.get('/redoc', (req, res) => {
   res.sendFile(__dirname + '/redoc.html');
 });
+
+// Buffering'i devre dışı bırak
+mongoose.set('bufferCommands', false);
+
+// MongoDB bağlantısını başlat
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('MongoDB Bağlandı!'))
+  .catch((err) => console.error('MongoDB Bağlantı Hatası:', err));
+
 // Sunucuyu başlat
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Sunucu ${PORT} portunda çalışıyor!`));
