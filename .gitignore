@@ -1,0 +1,17 @@
+# Node.js Bağımlılıkları
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Çevresel Değişkenler
+.env
+
+# İşletim Sistemi Dosyaları
+.DS_Store
+Thumbs.db
+
+# Diğer
+*.log
+.idea/
+.vscode/
+dist/
